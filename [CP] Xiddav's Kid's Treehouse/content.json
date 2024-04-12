@@ -1,12 +1,19 @@
-{ "Format": "1.24.0",	
+{ "Format": "2.0.0",	
 	
- "CustomLocations": [
+	"ConfigSchema": 	{  	"Treehouse Layout": 	{  "Default": "Default"},},	 	
+	
+ "CustomLocations": [	 
 { "Name": "Custom_KidsTreeHouse",	
     "FromMapFile": "assets/kidsTreeHouse.tmx",
-   "MigrateLegacyNames": [ "KidsTreeHouse" ]},
- ],
+   "MigrateLegacyNames": [ "KidsTreeHouse" ]}, ],  
  
-  "Changes": [ 	 
+  "Changes": [ 	 	  
+{   "Action": "EditMap",
+    "Target": "Maps/Custom_KidsTreeHouse",	  
+    "FromFile": "assets/kidsTreeHouse{{Treehouse Layout}}.tmx",	 
+	"PatchMode": "Replace",
+	"When": {"HasFile:{{FromFile}}": true}},  
+	  
 {   "Action": "EditMap",
      "Target": "Maps/Town",	  
      "FromFile": "assets/Town.tmx",	 
@@ -17,6 +24,13 @@
      "Target": "Maps/Town",
 	 "When": { "HasMod": "FlashShifter.StardewValleyExpandedCP"},	  
      "FromFile": "assets/TownSVE.tmx",	 
+	"PatchMode": "Overlay",
+     "ToArea": { "X": 47, "Y": 30, "Width": 2, "Height": 2 }},
+
+{   "Action": "EditMap",
+     "Target": "Maps/Town",
+	 "When": { "HasMod": "DaisyNiko.SVR3"},	  
+     "FromFile": "assets/TownR3.tmx",	 
 	"PatchMode": "Overlay",
      "ToArea": { "X": 47, "Y": 30, "Width": 2, "Height": 2 }},
 
@@ -31,13 +45,12 @@
 {	 "Action": "EditData",
      "Target": "Strings/StringsFromMaps",
      "Entries": { 
-		 "treehousemessage.1": "{{i18n:treehousemessage.1}}",
+		 "treehousemessage.1":  "{{i18n:treehousemessage.1}}",
 	  	 "treehousemessage.2":  "{{i18n:treehousemessage.2}}",
 	  	 "treehousemessage.3":  "{{i18n:treehousemessage.3}}",
 	  	 "treehousemessage.4":  "{{i18n:treehousemessage.4}}",
 	  	 "treehousemessage.5":  "{{i18n:treehousemessage.5}}",
 	  	 "treehousemessage.6":  "{{i18n:treehousemessage.6}}"	 }},
-
 
 {"LogName": "Vincent Schedual changes",
             "Action": "Include",
@@ -78,5 +91,4 @@
             "Action": "Include",
             "FromFile": "assets/Schedual/Custom.json",
 	"When": { "HasFile:{{FromFile}}": true },}, 
-
   ]}
