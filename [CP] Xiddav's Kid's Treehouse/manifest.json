@@ -1,7 +1,7 @@
 {
   "Name": "Kids Treehouse",
   "Author": "Xiddav",
-  "Version": "1.6.1",
+  "Version": "1.6.2",
   "Description": "Adds a Treehouse to town.",
   "UniqueID": "Xiddav.KidsTreeHouse",
   "MinimumApiVersion": "3.0",
@@ -10,6 +10,4 @@
   "Dependencies": [
    {     	"UniqueID": "xiddav.tilesheet",
       "IsRequired": true,   },  
-  ]
-
-}
+   ]}
